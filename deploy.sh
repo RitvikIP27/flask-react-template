@@ -31,7 +31,16 @@ echo "Restarting backend..."
 pkill -f gunicorn || true
 nohup venv/bin/gunicorn --bind unix:/tmp/app.sock server:app > gunicorn.log 2>&1 &
 
-echo "Reloading Nginx..."
+# -------------------------
+# Update Nginx config
+# -------------------------
+echo "Updating Nginx config..."
+sudo cp nginx.conf /etc/nginx/sites-available/default
+
+# -------------------------
+# Reload Nginx
+# -------------------------
+echo " Reloading Nginx..."
 sudo nginx -t
 sudo systemctl reload nginx
 
