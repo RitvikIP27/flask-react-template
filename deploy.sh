@@ -35,7 +35,7 @@ nohup venv/bin/gunicorn --bind unix:/tmp/app.sock server:app > gunicorn.log 2>&1
 # Update Nginx config
 # -------------------------
 echo "Updating Nginx config..."
-sudo cp nginx.conf /etc/nginx/sites-available/default
+sudo cp "$APP_DIR/nginx.conf" /etc/nginx/sites-available/default
 
 # -------------------------
 # Reload Nginx
