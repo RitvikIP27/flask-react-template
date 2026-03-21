@@ -323,3 +323,4 @@ Built on [jalantechnologies/flask-react-template](https://github.com/jalantechno
 ALL the files have been added to this workflow w
 
 </div>
+# deployed
